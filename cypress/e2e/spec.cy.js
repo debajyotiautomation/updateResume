@@ -8,7 +8,12 @@ describe('template spec', () => {
     cy.intercept('POST', 'https://filevalidation.naukri.com/file').as('xhrRequest');
   });
   it('passes', () => {
-    cy.visit('https://www.naukri.com/')
+    cy.visit('/', {
+      headers: {
+          'accept': 'application/json, text/plain, */*',
+          'user-agent': 'axios/0.27.2'
+      }
+  });
     cy.get('#login_Layer').click({ froce: true })
     cy.get('.form > :nth-child(2) > input', { timeouts: 50000 }).type('gayatrishirsat0407@gmail.com')
     cy.get(':nth-child(3) > input').type('debajyoti@1').type('{enter}');
