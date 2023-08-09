@@ -23,3 +23,12 @@ jobs:
 
       - name: Run Cypress tests
         run: npm run cypress:run # Replace with your test script command
+        
+      - name: Upload test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-results
+          path: cypress/results
+
+      - name: Set GITHUB_TOKEN
+        run: echo "export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
