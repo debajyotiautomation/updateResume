@@ -1,0 +1,25 @@
+{
+  "name": "debajyoti",
+  "version": "1.0.0",
+  "description": "update resume",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/debajyotiautomation/updateResume.git"
+  },
+  "author": "Debajyoti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/debajyotiautomation/updateResume/issues"
+  },
+  "homepage": "https://github.com/debajyotiautomation/updateResume#readme",
+  "dependencies": {
+    "cypress": "^12.17.3"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8"
+  }
+}
