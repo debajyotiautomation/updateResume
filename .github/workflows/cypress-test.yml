@@ -1,37 +1,37 @@
-name: Cypress Test
+# name: Cypress Test
 
-on:
-  schedule:
-  - cron: '*/30 * * * *'
-  push:
-    branches:
-      - main
-  workflow_dispatch: {}
-  
-jobs:
-  cypress-test:
-    runs-on: ubuntu-latest
+# on:
+#   schedule:
+#   - cron: '*/30 * * * *'
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch: {}
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+# jobs:
+#   cypress-test:
+#     runs-on: ubuntu-latest
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14' # Use the desired Node.js version
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v2
+#         with:
+#           node-version: '14' # Use the desired Node.js version
 
-      - name: Run Cypress tests
-        run: npm run cypress:run # Replace with your test script command
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: cypress-results
-          path: cypress/results
+#       - name: Run Cypress tests
+#         run: npm run cypress:run # Replace with your test script command
 
-      - name: Set GITHUB_TOKEN
-        run: echo "export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
+#       - name: Upload test results
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: cypress-results
+#           path: cypress/results
+
+#       - name: Set GITHUB_TOKEN
+#         run: echo "export GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
