@@ -4,7 +4,9 @@ on:
   schedule:
   - cron: '*/30 * * * *'
   workflow_dispatch: {}
-
+  push:
+    branches:
+      - main
 jobs:
   cypress-test:
     runs-on: ubuntu-latest
@@ -23,7 +25,7 @@ jobs:
 
       - name: Run Cypress tests
         run: npm run cypress:run # Replace with your test script command
-        
+
       - name: Upload test results
         uses: actions/upload-artifact@v2
         with:
