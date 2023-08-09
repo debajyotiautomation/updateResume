@@ -3,6 +3,7 @@ name: Cypress Test
 on:
   schedule:
   - cron: '*/30 * * * *'
+  workflow_dispatch: {}
 
 jobs:
   cypress-test:
