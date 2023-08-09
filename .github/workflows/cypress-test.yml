@@ -3,10 +3,11 @@ name: Cypress Test
 on:
   schedule:
   - cron: '*/30 * * * *'
-  workflow_dispatch: {}
   push:
     branches:
       - main
+  workflow_dispatch: {}
+  
 jobs:
   cypress-test:
     runs-on: ubuntu-latest
