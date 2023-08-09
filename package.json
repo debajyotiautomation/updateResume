@@ -4,7 +4,8 @@
   "description": "update resume",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run": "cypress run --record --key 0cffbb19-bbc9-4499-af1a-ce07c8e7845e"
   },
   "repository": {
     "type": "git",
